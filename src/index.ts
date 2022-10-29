@@ -13,6 +13,7 @@ const addInjectionEventListener = (element: HTMLElement) =>
   element.addEventListener("click", targetClickHandler, { once: true });
 
 const injectEditor = (element: HTMLElement) => {
+  console.log("current elements content is:", element.innerHTML);
   const tipTap = new Editor({
     element,
     extensions: [StarterKit],
@@ -24,7 +25,11 @@ const injectEditor = (element: HTMLElement) => {
 
 const targetClickHandler = (event: MouseEvent) => {
   console.log("element clicked");
-  if (event.target) injectEditor(event.target as HTMLElement);
+  const targetElement = event.target as HTMLElement;
+  const injectionTarget = targetElement.classList.contains("injctbl-target")
+    ? targetElement
+    : targetElement.closest<HTMLElement>(".injctbl-target");
+  if (injectionTarget) injectEditor(injectionTarget);
 };
 
 //TODO move to init function
@@ -37,6 +42,7 @@ const some_function = function (someVar: any, editor: any) {
     const isClickInside = someVar.contains(e.target);
     if (!isClickInside) {
       console.log("clicked outside ", someVar);
+      someVar.innerHTML = editor.getHTML();
       editor.destroy();
       addInjectionEventListener(someVar);
       document.removeEventListener("click", curried_func);

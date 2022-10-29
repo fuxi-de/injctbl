@@ -1,16 +1,28 @@
-.ProseMirror {
-  padding:0.5em 1em;
+.content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  text-align: center;
 }
 .ProseMirror {
+  position: absolute !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5em 1em;
   background-color: white;
   border-radius: 0.75rem;
   border: 3px solid black;
 }
 .injctbl-target {
-  width: 250px; 
+  position: relative;
+  width: 250px;
   background-color: plum;
   padding: 1em;
   border-radius: 0.75rem;
   border: 3px solid darkviolet;
 }
-

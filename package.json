@@ -5,7 +5,8 @@
   "private": false,
   "scripts": {
     "examples": "rm ./examples/bundle.js && cp ./dist/bundle.js ./examples && npx http-server ./examples",
-    "build": "rm -rf dist && webpack"
+    "build": "rm -rf dist && webpack",
+    "dev": "rm -rf dist && webpack --watch"
   },
   "dependencies": {
     "@tiptap/core": "^2.0.0-beta.182",
