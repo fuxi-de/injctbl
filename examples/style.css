@@ -1,0 +1,16 @@
+.ProseMirror {
+  padding:0.5em 1em;
+}
+.ProseMirror {
+  background-color: white;
+  border-radius: 0.75rem;
+  border: 3px solid black;
+}
+.injctbl-target {
+  width: 250px; 
+  background-color: plum;
+  padding: 1em;
+  border-radius: 0.75rem;
+  border: 3px solid darkviolet;
+}
+
